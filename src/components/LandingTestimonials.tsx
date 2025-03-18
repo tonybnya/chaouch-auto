@@ -30,8 +30,9 @@ const LandingTestimonials = ({
             Ce que disent nos clients
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Ne nous croyez pas sur parole. Écoutez les témoignages de nos
-            clients satisfaits qui ont trouvé chez nous le véhicule idéal.
+            Ne nous croyez pas sur parole ! Lisez plutôt les témoignages des
+            clients qui ont trouvé satifaction chez nous, après avoir fait une
+            bonne affaire en s'offrant un très bon véhicule.
           </p>
         </div>
 

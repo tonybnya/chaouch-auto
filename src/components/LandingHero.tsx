@@ -29,7 +29,15 @@ const LandingHero = () => {
   return (
     <>
       <Navbar />
-      <main className="overflow-hidden bg-[#09090b] text-white">
+      <main
+        className="relative overflow-hidden bg-[#09090b] text-white"
+        style={{
+          backgroundImage: "url('/hero-bg.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-75"></div>
         <section>
           <div className="relative pt-24 md:py-40">
             <AnimatedGroup

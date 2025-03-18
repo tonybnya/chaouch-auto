@@ -1,4 +1,5 @@
 import logo from "/logo.png";
+import { Mail, MapPin, Smartphone } from "lucide-react";
 
 // TODO: center the footer
 
@@ -55,18 +56,44 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Nos contacts</h3>
             <address className="not-italic text-gray-400">
-              <p>123 Auto Drive</p>
-              <p>Car City, ST 12345</p>
-              <p className="mt-2">Téléphone: (+237) 690 31 00 24</p>
-              {/* TODO: WhatsApp link */}
-              {/* TODO: email clickable and open the default mail app */}
-              <p>Email: chaouch-auto@gmail.com</p>
+              <div className="flex gap-2 items-center">
+                <MapPin className="text-[#ec6d51]" />
+                <div>
+                  <p>Logpom, Hôpital des Soeurs</p>
+                  <p>Douala, Cameroun</p>
+                </div>
+              </div>
+              <p className="mt-2 flex gap-2 items-center">
+                <Smartphone className="text-[#ec6d51]" />
+                <span>(+237) 690 31 00 24</span>
+              </p>
+              <p className="mt-2">
+                <a
+                  aria-label="Chat on WhatsApp"
+                  href="https://wa.me/237690310024"
+                  className="flex gap-2 items-center"
+                >
+                  <img
+                    alt="Discuter sur WhatsApp"
+                    src="/whatsapp.svg"
+                    className="h-6 w-6"
+                  />
+                  <span className="underline">Ecrivez-nous sur WhatsApp</span>
+                </a>
+              </p>
+              <p className="mt-2 flex gap-2 items-center">
+                <Mail className="text-[#ec6d51]" />
+                <a href="mailto:arounachaouch@gmail.com" className="underline">
+                  arounachaouch@gmail.com
+                </a>
+              </p>
             </address>
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
           <p>
-            &copy; {new Date().getFullYear()} Chaouch Auto. All rights reserved.
+            &copy; {new Date().getFullYear()} Chaouch Auto. Tous droits
+            réservés.
           </p>
         </div>
       </div>

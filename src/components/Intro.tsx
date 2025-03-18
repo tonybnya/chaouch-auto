@@ -11,14 +11,15 @@ interface ChaouchIntroductionProps {
 }
 
 const Intro: React.FC<ChaouchIntroductionProps> = ({
-  name = "Ahmed Chaouch",
-  photo = "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
-  bio = "Avec plus de 5 années d'expérience dans la vente de véhicules, j'ai consacré ma carrière à aider les clients à trouver le véhicule idéal. Ma passion pour les voitures et mon engagement à offrir un service honnête ont fait de moi concession un nom de confiance dans la communauté.",
+  name = "Arouna Chaouch",
+  // photo = "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
+  photo = "/chaouch.jpeg",
+  bio = "Avec plus de 5 années d'expérience dans la vente de véhicules, je consacre la majeure partie de mon temps à aider les clients à trouver le véhicule idéal. Ma passion pour les voitures et mon engagement à offrir un service honnête ont fait de moi, un label, un nom, une personne de confiance dans ce business.",
   yearsInBusiness = 5,
   vehiclesSold = 100,
   additionalStats = [
-    { label: "Satisfaction Clients", value: "98%" },
-    { label: "Clientèle fidèle", value: "65%" },
+    { label: "Satisfaction Clients", value: "85%" },
+    { label: "Clientèle fidèle", value: "75%" },
   ],
 }) => {
   return (
@@ -41,7 +42,7 @@ const Intro: React.FC<ChaouchIntroductionProps> = ({
             <h2 className="text-3xl font-bold mb-4">
               Présentation d'<span className="text-[#ec6d51]">{name}</span>
             </h2>
-            <p className="text-lg text-gray-400 mb-6">{bio}</p>
+            <p className="text-lg text-gray-400 mb-6 text-justify">{bio}</p>
 
             {/* Stats Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

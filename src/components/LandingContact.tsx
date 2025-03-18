@@ -92,7 +92,7 @@ const LandingContact = ({
                 <FormItem>
                   <FormLabel>Nom</FormLabel>
                   <FormControl>
-                    <Input placeholder="John Doe" {...field} />
+                    <Input placeholder="Pierre Ndoumbe" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -108,7 +108,7 @@ const LandingContact = ({
                   <FormControl>
                     <Input
                       type="email"
-                      placeholder="john.doe@example.com"
+                      placeholder="ndoumbe.pierre@gmail.com"
                       {...field}
                     />
                   </FormControl>
@@ -124,7 +124,11 @@ const LandingContact = ({
                 <FormItem>
                   <FormLabel>Numéro de téléphone</FormLabel>
                   <FormControl>
-                    <Input type="tel" placeholder="(123) 456-7890" {...field} />
+                    <Input
+                      type="tel"
+                      placeholder="(+237) 699 12 34 56"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -154,7 +158,7 @@ const LandingContact = ({
                 <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="N'hésitez pas à nous faire part de vos recherches ou de vos questions..."
+                    placeholder="N'hésitez pas à indiquer vos besoins ou à poser des questions..."
                     className="min-h-[120px]"
                     {...field}
                   />
