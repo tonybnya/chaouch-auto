@@ -104,7 +104,7 @@ const LandingHero = () => {
                   className="mx-auto mt-8 max-w-2xl text-balance text-lg"
                 >
                   Des voitures d'occasion et de très bonne qualité à des prix
-                  compétitifs. Où que vous soyez au Cameroun, profitez d’un
+                  compétitifs. Où que vous soyiez au Cameroun, profitez d’un
                   large choix de véhicules fiables, prêts à rouler, avec des
                   offres adaptées à tous les budgets.
                 </TextEffect>

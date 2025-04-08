@@ -22,6 +22,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
+import WhatsApp from "./WhatsApp";
+import OrDivider from "./OrDivider";
 
 // TODO: add WhatsApp button
 
@@ -75,9 +77,16 @@ const LandingContact = ({
     <div
       className={`text-white w-full max-w-4xl mx-auto p-6 bg-[#09090b] rounded-lg shadow-md border border-gray-800 ${className}`}
     >
-      <h2 className="text-2xl font-bold mb-6 text-center">Nous contacter</h2>
-      <p className="text-gray-400 mb-8 text-center">
-        Vous êtes intéressé par un véhicule ou vous avez des questions ?
+      <div className="flex items-center justify-center">
+        <WhatsApp />
+      </div>
+
+      <OrDivider />
+      {/* <h2 className="text-md text-gray-400 font-light my-6 text-center uppercase"> */}
+      {/*   ou */}
+      {/* </h2> */}
+
+      <p className="mb-8 text-center">
         Remplissez le formulaire ci-dessous et nous vous répondrons dans les
         plus brefs délais.
       </p>

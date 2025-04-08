@@ -14,7 +14,7 @@ const Intro: React.FC<ChaouchIntroductionProps> = ({
   name = "Arouna Chaouch",
   // photo = "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
   photo = "/chaouch.jpeg",
-  bio = "Avec plus de 5 années d'expérience dans la vente de véhicules, je consacre la majeure partie de mon temps à aider les clients à trouver le véhicule idéal. Ma passion pour les voitures et mon engagement à offrir un service honnête ont fait de moi, un label, un nom, une personne de confiance dans ce business.",
+  bio = "Je suis NSANGOU NJIMOLUH Arouna Chaouch, entrepreneur passionné et expert en vente automobile, établi à Douala au Cameroun. Fort de plusieurs années d'expérience dans le domaine, j'accompagne mes clients avec dévouement dans l'achat de leur véhicule, en leur offrant des conseils personnalisés et un service transparent. Ma passion pour l'automobile et mon engagement envers l'honnêteté et la satisfaction client ont fait de moi bien plus qu'un vendeur de voitures : un repère, un nom de confiance, une référence dans le secteur.",
   yearsInBusiness = 5,
   vehiclesSold = 100,
   additionalStats = [

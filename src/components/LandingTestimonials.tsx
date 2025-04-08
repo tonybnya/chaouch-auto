@@ -82,36 +82,37 @@ const LandingTestimonials = ({
 
 const defaultTestimonials: TestimonialProps[] = [
   {
-    name: "Sarah Johnson",
-    photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=sarah",
+    name: "Solange Péka",
+    photo: "/solange.jpeg",
+    // photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=sarah",
     rating: 5,
     quote:
-      "J'ai trouvé la voiture de mes rêves à un prix incroyable. L'ensemble du processus s'est déroulé de manière fluide et transparente. Je suis satisfait !",
+      "J'ai trouvé la voiture de mes rêves à un prix incroyable. L'ensemble du processus s'est déroulé de manière fluide et transparente. Je suis satisfaite !",
   },
   {
-    name: "Michael Rodriguez",
-    photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=michael",
+    name: "Adamou Moussa",
+    photo: "/adamou.jpeg",
     rating: 4,
     quote:
       "Grand choix de véhicules de qualité. Chaouch Auto était bien informé et m'a aidé à trouver exactement ce que je cherchais dans les limites de mon budget.",
   },
   {
-    name: "Emily Chen",
-    photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=emily",
+    name: "Mamouda Tapon",
+    photo: "/janvier.jpeg",
     rating: 5,
     quote:
-      "C'était la première fois que j'achetais une voiture d'occasion et j'étais nerveux, mais l'équipe m'a facilité la tâche. Ils ont répondu à mes attentes.",
+      "C'était la première fois que j'achetais une voiture d'occasion au Cameroun et j'étais nerveux, mais l'équipe m'a facilité la tâche. Ils ont répondu à mes attentes.",
   },
   {
-    name: "David Thompson",
-    photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=david",
+    name: "Jean Paul Tchoungui",
+    photo: "jp.jpeg",
     rating: 5,
     quote:
       "J'y ai acheté plusieurs véhicules au fil des ans. Leur engagement envers la qualité et le service à la clientèle m'incite à revenir. Faites-leur confiance, ça vaut le détour.",
   },
   {
-    name: "Olivia Martinez",
-    photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=olivia",
+    name: "Tony Blondeau",
+    photo: "tony.png",
     rating: 4,
     quote:
       "Les options de financement proposées étaient flexibles et m'ont permis d'obtenir la voiture que je voulais avec un rapport qualité-prix très intéressant.",
