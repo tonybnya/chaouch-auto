@@ -177,12 +177,14 @@ const LandingContact = ({
             )}
           />
 
-          <Button
-            type="submit"
-            className="w-full md:w-auto bg-[#ec6d51] hover:cursor-pointer hover:scale-105"
-          >
-            <Send className="mr-2 h-4 w-4" /> Envoyer
-          </Button>
+          <div className="flex items-center justify-center">
+            <Button
+              type="submit"
+              className="w-full md:w-[50%] bg-[#ec6d51] hover:cursor-pointer hover:scale-105"
+            >
+              <Send className="mr-2 h-4 w-4" /> Envoyer
+            </Button>
+          </div>
         </form>
       </Form>
     </div>
