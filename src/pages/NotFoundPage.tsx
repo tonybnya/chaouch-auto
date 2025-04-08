@@ -31,7 +31,10 @@ const NotFoundPage = () => {
             Revenons à votre véhicule.
           </p>
 
-          <Button size="lg" className="px-8 bg-[#ec6d51] hover:bg-[#ec6d51]/90">
+          <Button
+            size="lg"
+            className="cursor-pointer px-8 bg-[#ec6d51] hover:bg-[#ec6d51]/90"
+          >
             <a
               href="/"
               className="uppercase font-bold"
