@@ -23,7 +23,7 @@ const LandingTestimonials = ({
   testimonials = defaultTestimonials,
 }: TestimonialsSectionProps) => {
   return (
-    <section className="w-full py-16 bg-[#09090b] text-white border-t border-gray-800">
+    <section className="w-full py-32 bg-[#09090b] text-white border-t border-gray-800">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-[#ec6d51] mb-4">

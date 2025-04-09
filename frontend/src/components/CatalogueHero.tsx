@@ -1,9 +1,7 @@
-import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
-import { Button } from "@/components/ui/button";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
-import { Navbar } from "@/components/Navbar";
+import { ArrowDown } from "lucide-react";
 
 const transitionVariants = {
   item: {
@@ -25,14 +23,13 @@ const transitionVariants = {
   },
 };
 
-const LandingHero = () => {
+const CatalogueHero = () => {
   return (
     <>
-      <Navbar />
       <main
-        className="relative overflow-hidden bg-[#09090b] text-white"
+        className="relative overflow-hidden bg-[#09090b] text-white min-h-screen flex justify-center items-center"
         style={{
-          backgroundImage: "url('/hero-bg.jpg')",
+          backgroundImage: "url('/hero-catalogue.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -91,22 +88,9 @@ const LandingHero = () => {
                   preset="fade-in-blur"
                   speedSegment={0.3}
                   as="h1"
-                  className="mt-8 text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem]"
+                  className="mt-8 text-balance text-4xl md:text-7xl lg:mt-16 xl:text-[5.25rem]"
                 >
-                  Achetez vos véhicules d'occasion chez nous !
-                </TextEffect>
-                <TextEffect
-                  per="line"
-                  preset="fade-in-blur"
-                  speedSegment={0.3}
-                  delay={0.5}
-                  as="p"
-                  className="mx-auto mt-8 max-w-2xl text-balance text-lg"
-                >
-                  Des voitures d'occasion et de très bonne qualité à des prix
-                  compétitifs. Où que vous soyiez au Cameroun, profitez d’un
-                  large choix de véhicules fiables, prêts à rouler, avec des
-                  offres adaptées à tous les budgets.
+                  À la recherche d'un véhicule ?
                 </TextEffect>
 
                 <AnimatedGroup
@@ -123,31 +107,7 @@ const LandingHero = () => {
                   }}
                   className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
                 >
-                  <div
-                    key={1}
-                    className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
-                  >
-                    <Button
-                      asChild
-                      size="lg"
-                      className="rounded-xl px-5 text-base bg-[#ec6d51]"
-                    >
-                      <Link to="#link">
-                        <span className="text-nowrap">Voir le catalogue</span>
-                      </Link>
-                    </Button>
-                  </div>
-                  <Button
-                    key={2}
-                    asChild
-                    size="lg"
-                    variant="ghost"
-                    className="h-10.5 rounded-xl px-5 border-2 border-[#ec6d51]"
-                  >
-                    <Link to="#link">
-                      <span className="text-nowrap">Nos contacts</span>
-                    </Link>
-                  </Button>
+                  <ArrowDown className="animate-bounce h-20 w-20" />
                 </AnimatedGroup>
               </div>
             </div>
@@ -158,4 +118,4 @@ const LandingHero = () => {
   );
 };
 
-export default LandingHero;
+export default CatalogueHero;

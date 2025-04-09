@@ -23,7 +23,7 @@ const Intro: React.FC<ChaouchIntroductionProps> = ({
   ],
 }) => {
   return (
-    <section className="w-full py-16 bg-[#09090b] text-white border-t border-gray-800">
+    <section className="w-full py-32 bg-[#09090b] text-white border-t border-gray-800">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-8">
           {/* Photo Column */}

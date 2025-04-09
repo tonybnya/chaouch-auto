@@ -6,7 +6,7 @@ const NotFoundPage = () => {
     <div className="min-h-screen flex text-white">
       <div className="w-1/2 h-screen">
         <img
-          src="/bg.png"
+          src="/night.jpg"
           alt="Background illustration"
           className="h-full w-full object-cover"
         />

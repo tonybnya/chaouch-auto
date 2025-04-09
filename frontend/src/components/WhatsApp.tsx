@@ -1,6 +1,6 @@
 const WhatsApp = () => {
   return (
-    <div className="bg-[#25D366] text-white px-2 py-4 rounded-md hover:scale-110 cursor-pointer">
+    <div className="bg-[#25D366] text-white p-4 rounded-md hover:scale-110 cursor-pointer">
       <a
         aria-label="Chat on WhatsApp"
         href="https://wa.me/237690310024"
@@ -9,9 +9,9 @@ const WhatsApp = () => {
         <img
           alt="Discuter sur WhatsApp"
           src="/whatsapp.svg"
-          className="h-6 w-6"
+          className="h-8 w-8"
         />
-        <span className="">Ecrivez-nous sur WhatsApp</span>
+        <span className="font-bold">Ecrivez-nous sur WhatsApp</span>
       </a>
     </div>
   );

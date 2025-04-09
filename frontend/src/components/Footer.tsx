@@ -95,6 +95,17 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Chaouch Auto. Tous droits
             réservés.
           </p>
+          <p>
+            Développé par{" "}
+            <a
+              href="https://linkedin.com/in/tonybnya"
+              target="_blank"
+              className="underline font-bold text-white"
+            >
+              tonybnya
+            </a>
+            .
+          </p>
         </div>
       </div>
     </footer>

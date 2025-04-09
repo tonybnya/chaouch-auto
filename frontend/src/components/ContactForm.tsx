@@ -6,7 +6,6 @@ import { Send } from "lucide-react";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -15,13 +14,6 @@ import {
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select";
 import WhatsApp from "./WhatsApp";
 import OrDivider from "./OrDivider";
 
@@ -75,6 +67,7 @@ const LandingContact = ({
 
   return (
     <div
+      id="contact"
       className={`text-white w-full max-w-4xl mx-auto p-6 bg-[#09090b] rounded-lg shadow-md border border-gray-800 ${className}`}
     >
       <div className="flex items-center justify-center">
@@ -82,9 +75,6 @@ const LandingContact = ({
       </div>
 
       <OrDivider />
-      {/* <h2 className="text-md text-gray-400 font-light my-6 text-center uppercase"> */}
-      {/*   ou */}
-      {/* </h2> */}
 
       <p className="mb-8 text-center">
         Remplissez le formulaire ci-dessous et nous vous répondrons dans les
