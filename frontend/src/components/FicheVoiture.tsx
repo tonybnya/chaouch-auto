@@ -1,37 +1,48 @@
-import { useState, useEffect, useRef } from "react";
-import Feature from "./Feature";
+import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import WhatsApp from "./WhatsApp";
+import WhatsApp from "@/components/WhatsApp";
+import Feature from "@/components/Feature";
 
-const FicheVoiture = () => {
-  const images = [
-    "/hero-bg.jpg",
-    "/hero-bg.jpg",
-    "/hero-bg.jpg",
-    "/hero-bg.jpg",
-  ];
-
+const FicheVoiture = ({
+  brand,
+  model,
+  year,
+  city,
+  in_stock,
+  desc,
+  origin,
+  transmission,
+  km,
+  clim,
+  volant,
+  engine,
+  color,
+  doors,
+  seats,
+  power,
+  sellery,
+  images = [],
+}) => {
   const [current, setCurrent] = useState(0);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef(null);
 
-  const nextSlide = () => setCurrent((prev) => (prev + 1) % images.length);
-  const prevSlide = () =>
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % images.length);
+  };
+
+  const prevSlide = () => {
     setCurrent((prev) => (prev - 1 + images.length) % images.length);
+  };
 
-  useEffect(() => {
-    timeoutRef.current = setTimeout(nextSlide, 4000);
-    return () => clearTimeout(timeoutRef.current!);
-  }, [current]);
-
-  const handleThumbnailClick = (index: number) => {
+  const handleThumbnailClick = (index) => {
     setCurrent(index);
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8 text-white">
+    <div className="max-w-7xl mx-auto px-4 py-8 text-white">
       <div className="grid lg:grid-cols-2 gap-8">
-        {/* Slider + miniatures */}
+        {/* Slider */}
         <div className="space-y-4 relative overflow-hidden rounded-xl">
           <div className="w-full h-80 relative rounded-xl overflow-hidden">
             {images.map((src, idx) => (
@@ -44,8 +55,6 @@ const FicheVoiture = () => {
                 }`}
               />
             ))}
-
-            {/* Navigation */}
             <button
               onClick={prevSlide}
               className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 p-2 rounded-full hover:bg-black/70"
@@ -60,7 +69,6 @@ const FicheVoiture = () => {
             </button>
           </div>
 
-          {/* Miniatures */}
           <div className="flex gap-2">
             {images.map((src, idx) => (
               <img
@@ -78,28 +86,19 @@ const FicheVoiture = () => {
 
         {/* Infos principales */}
         <div className="space-y-4">
-          <div>
-            <h1 className="text-2xl font-bold">Toyota Corolla 2020</h1>
-            <p className="text-muted-foreground">
-              <span className="text-[#f6d44c]">Disponible</span>{" "}
-              <span className="text-[#ec6d51]">•</span> <span>Abidjan</span>
-            </p>
-          </div>
-          {/* <p className="text-3xl font-semibold text-primary">6 900 000 FCFA</p> */}
-          <div className="w-[75%]">
+          <h1 className="text-2xl font-bold">{`${brand} ${model} ${year}`}</h1>
+          <p className="text-muted-foreground">
+            {in_stock && <span className="text-[#f6d44c]">Disponible</span>}{" "}
+            <span className="text-[#ec6d51]">•</span> <span>{city}</span>
+          </p>
+          <div className="w-[90%]">
             <WhatsApp />
           </div>
-          {/* Description complète */}
           <div className="mt-10">
             <h2 className="text-xl font-semibold mb-2 text-[#ec6d51]">
               État général
             </h2>
-            <p className="text-sm text-muted-foreground">
-              Véhicule très propre, importé récemment de Belgique. Aucun frais à
-              prévoir. Carrosserie intacte, moteur en parfait état, pneus neufs,
-              climatisation fonctionnelle. Convient pour un usage familial ou
-              professionnel.
-            </p>
+            <p className="text-sm text-muted-foreground">{desc}</p>
           </div>
         </div>
       </div>
@@ -110,21 +109,21 @@ const FicheVoiture = () => {
           Caractéristiques
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-sm">
-          <Feature label="Origine" value="Japon" />
-          <Feature label="Ville" value="Abidjan" />
-          <Feature label="Transmission" value="Automatique" />
-          <Feature label="Marque" value="Toyota" />
-          <Feature label="Modèle" value="Corolla" />
-          <Feature label="Année" value="2020" />
-          <Feature label="Kilométrage" value="65 000 km" />
-          <Feature label="Climatisation" value="Oui" />
-          <Feature label="Volant" value="Droite" />
-          <Feature label="Moteur" value="Essence 1.8L" />
-          <Feature label="Couleur" value="Gris métal" />
-          <Feature label="Portes" value="4" />
-          <Feature label="Sièges" value="5" />
-          <Feature label="Puissance" value="140 ch" />
-          <Feature label="Sellerie" value="Cuir noir" />
+          <Feature label="Origine" value={origin} />
+          <Feature label="Ville" value={city} />
+          <Feature label="Transmission" value={transmission} />
+          <Feature label="Marque" value={brand} />
+          <Feature label="Modèle" value={model} />
+          <Feature label="Année" value={year} />
+          <Feature label="Kilométrage" value={`${km} km`} />
+          <Feature label="Climatisation" value={clim} />
+          <Feature label="Volant" value={volant} />
+          <Feature label="Moteur" value={engine} />
+          <Feature label="Couleur" value={color} />
+          <Feature label="Portes" value={doors} />
+          <Feature label="Sièges" value={seats} />
+          <Feature label="Puissance" value={power} />
+          <Feature label="Sellerie" value={sellery} />
         </div>
       </div>
     </div>

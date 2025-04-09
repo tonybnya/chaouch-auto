@@ -1,0 +1,20 @@
+{
+  "brand": "Toyota",
+  "model": "Corolla",
+  "year": 2020,
+  "color": "bleu",
+  "transmission": "Automatic",
+  "km": 45000,
+  "seats": 5,
+  "doors": 4,
+  "sellery": "cuir",
+  "origin": "Belgique",
+  "volant": "gauche",
+  "clim": "bon état, d'origine",
+  "city": "Douala",
+  "engine": "2.0L TDI",
+  "power": "15CV",
+  "images": ["/hero-bg.jpg", "hero-catalogue.jpg"],
+  "desc": "Véhicule très propre importé récemment de Belgique. Aucun frais à prévoir. Carrosserie intacte, moteur en parfait état, pneus neufs, climatisation fonctionnelle. Convient pour un usage familial ou professionnel.",
+  "in_stock": true
+}

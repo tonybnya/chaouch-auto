@@ -11,7 +11,8 @@
 /*   line-height: 1.5; */
 /*   font-weight: 400; */
 /**/
-/*   /* color-scheme: light dark; */ */
+/*   /* color-scheme: light dark; */
+*/
 /*   /* color: rgba(255, 255, 255, 0.87); */ */
 /*   /* background-color: #242424; */ */
 /**/
@@ -190,3 +191,13 @@
 /*     @apply bg-background text-foreground; */
 /*   } */
 /* } */
+
+.card {
+  width: 190px;
+  height: 254px;
+  border-radius: 30px;
+  background: #212121;
+  box-shadow:
+    15px 15px 30px rgb(25, 25, 25),
+    -15px -15px 30px rgb(60, 60, 60);
+}

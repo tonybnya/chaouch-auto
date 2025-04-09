@@ -5,6 +5,23 @@
 /*   text-align: center; */
 /* } */
 
+.card-vehicle {
+  padding: 5px;
+  background: #151515;
+  /* box-shadow: */
+  /*   15px 15px 30px rgb(25, 25, 25), */
+  /*   -15px -15px 30px rgb(60, 60, 60); */
+}
+
+.btn {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
 /* .logo { */
 /*   height: 6em; */
 /*   padding: 1.5em; */

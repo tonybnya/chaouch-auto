@@ -11,7 +11,9 @@ const WhatsApp = () => {
           src="/whatsapp.svg"
           className="h-8 w-8"
         />
-        <span className="font-bold">Ecrivez-nous sur WhatsApp</span>
+        <span className="font-bold max-sm:text-sm">
+          Ecrivez-nous sur WhatsApp
+        </span>
       </a>
     </div>
   );

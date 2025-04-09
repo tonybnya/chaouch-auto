@@ -1,10 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Landing from "@/pages/Landing";
 import Catalogue from "@/pages/Catalogue";
 import APropos from "@/pages/APropos";
 import Contact from "@/pages/Contact";
 import Layout from "@/pages/Layout";
 import NotFoundPage from "@/pages/NotFoundPage";
+import "./App.css";
 
 const App = () => {
   return (
