@@ -110,7 +110,7 @@ const FicheVoiture = ({
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-sm">
           <Feature label="Origine" value={origin} />
-          <Feature label="Ville" value={city} />
+          <Feature label="Disponible à" value={city} />
           <Feature label="Transmission" value={transmission} />
           <Feature label="Marque" value={brand} />
           <Feature label="Modèle" value={model} />

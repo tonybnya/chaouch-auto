@@ -46,7 +46,7 @@ const Intro: React.FC<ChaouchIntroductionProps> = ({
 
             {/* Stats Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <Card className="bg-primary/10">
+              <Card className="bg-white/5 border border-white/10 rounded-lg p-6 text-center card-hover">
                 <CardHeader>
                   <CardTitle className="text-center text-[#ec6d51]">
                     {yearsInBusiness}+
@@ -57,7 +57,7 @@ const Intro: React.FC<ChaouchIntroductionProps> = ({
                 </CardContent>
               </Card>
 
-              <Card className="bg-primary/10">
+              <Card className="bg-white/5 border border-white/10 rounded-lg p-6 text-center card-hover">
                 <CardHeader>
                   <CardTitle className="text-center text-[#ec6d51]">
                     {vehiclesSold.toLocaleString()}+
@@ -69,7 +69,10 @@ const Intro: React.FC<ChaouchIntroductionProps> = ({
               </Card>
 
               {additionalStats.map((stat, index) => (
-                <Card key={index} className="bg-primary/10">
+                <Card
+                  key={index}
+                  className="bg-white/5 border border-white/10 rounded-lg p-6 text-center card-hover"
+                >
                   <CardHeader>
                     <CardTitle className="text-center text-[#ec6d51]">
                       {stat.value}

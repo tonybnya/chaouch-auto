@@ -32,7 +32,7 @@ const CardVehicle = ({
       <div className="flex gap-4">
         <Button
           onClick={onViewDetails}
-          className="w-full bg-black text-white transition-all"
+          className="w-full bg-black text-white transition-all cursor-pointer hover:scale-105 hover:bg-[#ec6d51]"
         >
           <Info className="size-4 me-1" color="#f6d44c" />
           En savoir plus

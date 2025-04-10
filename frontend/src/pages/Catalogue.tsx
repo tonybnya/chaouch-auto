@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import CardVehicle from "@/components/CardVehicle";
 import CatalogueHero from "@/components/CatalogueHero";
 import Spinner from "@/components/Spinner";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
+import { X } from "lucide-react";
 import FicheVoiture from "@/components/FicheVoiture";
 
 const Catalogue = () => {
@@ -71,10 +72,10 @@ const Catalogue = () => {
 
       {/* Modal */}
       <Dialog open={open} onOpenChange={handleCloseModal}>
-        {/* <DialogContent className="max-w-32 bg-[#09090b] overflow-y-auto max-h-[90vh]"> */}
-        {/* <DialogContent className="w-[95vw] max-w-[1200px] bg-[#09090b] overflow-y-auto max-h-[90vh] p-6 rounded-xl"> */}
-        {/* <DialogContent className="w-full max-w-6xl bg-[#09090b] overflow-y-auto max-h-[90vh] p-6 rounded-xl"> */}
         <DialogContent className="w-full max-w-lg lg:max-w-6xl bg-[#09090b] overflow-y-auto max-h-[90vh] p-6 rounded-xl">
+          <DialogClose className="absolute top-4 right-4 text-white hover:text-[#ec6d51] cursor-pointer">
+            <X className="h-7 w-7" />
+          </DialogClose>
           {selectedVehicle && <FicheVoiture {...selectedVehicle} />}
         </DialogContent>
       </Dialog>
