@@ -153,9 +153,16 @@ const APropos = () => {
         </h2>
         <p className="text-muted-foreground leading-relaxed text-justify tracking-tight">
           Derrière chaque véhicule que nous proposons, il y a une équipe soudée
-          composée de techniciens, commerciaux, développeurs et passionnés
-          d'automobile. Ensemble, nous travaillons à vous offrir un service
-          irréprochable, du choix du véhicule à la livraison.
+          composée de techniciens, de commerciaux, de passionnés d'automobile.
+          Ensemble, nous travaillons à vous offrir un service irréprochable, du
+          choix du véhicule à la livraison. Sous l'impulsion de son promoteur,{" "}
+          <span className="font-bold text-[#f6d44c]">
+            NSANGOU NJIMOLUH Arouna Chaouch
+          </span>
+          , jeune entrepreneur basé à Douala,{" "}
+          <span className="text-[#ec6d51] font-bold">Chaouch Auto</span>{" "}
+          s'illustre depuis plusieurs années dans ce domaine avec force, ayant
+          pour seul objectif la pleine satisfaction de ses clients.
         </p>
       </div>
     </div>

@@ -12,7 +12,7 @@ const CardVehicle = ({
   onViewDetails,
 }) => {
   return (
-    <div className="w-[300px] group relative space-y-4 text-white">
+    <div className="w-[300px] group relative space-y-4 text-white bg-[#151515]/50 p-2">
       <figure className="group-hover:opacity-90">
         <img
           src={images[0]}
@@ -22,7 +22,7 @@ const CardVehicle = ({
       </figure>
       <div className="flex justify-between p-2">
         <div>
-          <h3 className="text-md font-semibold">
+          <h3 className="text-sm font-semibold">
             {brand} {model} {year}
           </h3>
           {in_stock && <p className="text-sm text-[#f6d44c]">Disponible</p>}
