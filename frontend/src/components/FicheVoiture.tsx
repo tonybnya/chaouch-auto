@@ -120,8 +120,8 @@ const FicheVoiture = ({
           <Feature label="Volant" value={volant} />
           <Feature label="Moteur" value={engine} />
           <Feature label="Couleur" value={color} />
-          <Feature label="Portes" value={doors} />
-          <Feature label="Sièges" value={seats} />
+          <Feature label="Nombre de portières" value={doors} />
+          <Feature label="Nombre de sièges" value={seats} />
           <Feature label="Puissance" value={power} />
           <Feature label="Sellerie" value={sellery} />
         </div>
