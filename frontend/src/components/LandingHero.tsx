@@ -69,7 +69,6 @@ const LandingHero = () => {
                 src="/night.jpg"
                 alt="background"
                 className="absolute inset-0 w-full h-full object-cover -z-10"
-                // className="absolute inset-x-0 top-56 z-0 w-full object-cover lg:top-32"
               />
             </AnimatedGroup>
             <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
