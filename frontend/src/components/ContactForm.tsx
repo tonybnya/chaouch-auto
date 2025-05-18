@@ -1,70 +1,44 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { Send } from "lucide-react";
-
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "./ui/form";
+import { useRef, useEffect } from "react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import WhatsApp from "./WhatsApp";
 import OrDivider from "./OrDivider";
 
-// TODO: add WhatsApp button
-
-const formSchema = z.object({
-  name: z
-    .string()
-    .min(2, { message: "Le nom doit comporter au moins 2 caractères." }),
-  email: z
-    .string()
-    .email({ message: "Veuillez saisir une adresse email valide." }),
-  phone: z
-    .string()
-    .min(10, { message: "Veuillez saisir un numéro de téléphone valide." }),
-  preferredVehicle: z.string().optional(),
-  message: z
-    .string()
-    .min(10, { message: "Le message doit comporter au moins 10 caractères." }),
-});
-
-type FormValues = z.infer<typeof formSchema>;
-
 interface ContactFormProps {
   className?: string;
-  onSubmit?: (values: FormValues) => void;
+  onSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
 const LandingContact = ({
   className = "",
   onSubmit,
 }: ContactFormProps = {}) => {
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      preferredVehicle: "",
-      message: "",
-    },
-  });
+  // Create a ref for the redirect input field
+  const redirectInputRef = useRef<HTMLInputElement>(null);
 
-  const handleSubmit = (values: FormValues) => {
-    // In a real implementation, this would send the form data to a server
-    console.log("Form submitted:", values);
-    if (onSubmit) {
-      onSubmit(values);
+  // Set the complete URL for redirection when component mounts
+  useEffect(() => {
+    if (redirectInputRef.current && typeof window !== 'undefined') {
+      redirectInputRef.current.value = `${window.location.origin}/merci`;
     }
-  };
+  }, []);
 
+  // Note: First submission to FormSubmit.co will send a confirmation email to the form owner's email
+  // The form owner must click the confirmation link before emails will be delivered
+  
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    // Log form submission for debugging
+    console.log("Form submitted");
+    
+    // Call the onSubmit prop if provided
+    if (onSubmit) {
+      onSubmit(event);
+    }
+    
+    // Allow the default form submission to proceed - do not prevent default
+  };
   return (
     <div
       id="contact"
@@ -81,102 +55,114 @@ const LandingContact = ({
         plus brefs délais.
       </p>
 
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <FormField
-              control={form.control}
+      <form
+        method="POST"
+        action="https://formsubmit.co/arounachaouch@gmail.com"
+        onSubmit={handleSubmit}
+        className="space-y-6"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <label htmlFor="name" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+              Nom
+            </label>
+            <Input
+              id="name"
               name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Nom</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Pierre Ndoumbe" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+              placeholder="Pierre Ndoumbe"
+              required
+              minLength={3}
+              className="bg-background"
             />
+          </div>
 
-            <FormField
-              control={form.control}
+          <div className="space-y-2">
+            <label htmlFor="email" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+              Email
+            </label>
+            <Input
+              id="email"
+              type="email"
               name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="email"
-                      placeholder="ndoumbe.pierre@gmail.com"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+              placeholder="ndoumbe.pierre@gmail.com"
+              required
+              className="bg-background"
             />
+          </div>
 
-            <FormField
-              control={form.control}
+          <div className="space-y-2">
+            <label htmlFor="phone" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+              Numéro de téléphone
+            </label>
+            <Input
+              id="phone"
+              type="tel"
               name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Numéro de téléphone</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="tel"
-                      placeholder="(+237) 699 12 34 56"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Ville de résidence</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Douala" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+              placeholder="(+237) 699 12 34 56"
+              required
+              minLength={9}
+              className="bg-background"
             />
           </div>
 
-          <FormField
-            control={form.control}
+          <div className="space-y-2">
+            <label htmlFor="city" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+              Ville de résidence
+            </label>
+            <Input
+              id="city"
+              name="city"
+              placeholder="Douala"
+              required
+              minLength={3}
+              className="bg-background"
+            />
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <label htmlFor="message" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            Message
+          </label>
+          <Textarea
+            id="message"
             name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Message</FormLabel>
-                <FormControl>
-                  <Textarea
-                    placeholder="N'hésitez pas à indiquer vos besoins ou à poser des questions..."
-                    className="min-h-[120px]"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+            placeholder="N'hésitez pas à indiquer vos besoins ou à poser des questions..."
+            className="min-h-[120px] bg-background"
+            required
+            minLength={10}
           />
+        </div>
 
-          <div className="flex items-center justify-center">
-            <Button
-              type="submit"
-              className="w-full md:w-[50%] bg-[#ec6d51] hover:cursor-pointer hover:scale-105"
-            >
-              <Send className="mr-2 h-4 w-4" /> Envoyer
-            </Button>
-          </div>
-        </form>
-      </Form>
+        {/* FormSubmit.co configuration fields */}
+        <input
+          type="hidden"
+          name="_subject"
+          value="Chaouch Auto - Nouveau message arrivé !!!"
+        />
+        <input type="hidden" name="_captcha" value="false" />
+        <input 
+          type="hidden" 
+          name="_next" 
+          ref={redirectInputRef}
+          defaultValue="/merci" 
+        />
+        {/* Honeypot field to prevent spam */}
+        <input type="text" name="_honey" style={{ display: 'none' }} />
+        {/* Disable email auto-response */}
+        <input type="hidden" name="_autoresponse" value="Merci pour votre message. Nous vous contacterons dans les plus brefs délais." />
+        {/* Disable email template */}
+        <input type="hidden" name="_template" value="table" />
+
+        <div className="flex items-center justify-center">
+          <Button
+            type="submit"
+            className="w-full md:w-[50%] bg-[#ec6d51] hover:cursor-pointer hover:scale-105"
+          >
+            <Send className="mr-2 h-4 w-4" /> Envoyer
+          </Button>
+        </div>
+      </form>
     </div>
   );
 };

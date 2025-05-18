@@ -5,6 +5,7 @@ const WhatsApp = () => {
         aria-label="Chat on WhatsApp"
         href="https://wa.me/237690310024"
         className="flex gap-2 items-center"
+        target="_blank"
       >
         <img
           alt="Discuter sur WhatsApp"

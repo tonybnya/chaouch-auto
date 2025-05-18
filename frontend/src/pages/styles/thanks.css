@@ -1,0 +1,76 @@
+/* Modern color palette - same as index.css for consistency */
+:root {
+  --primary-color: #3498db;
+  --primary-dark: #2980b9;
+  --accent-color: #e74c3c;
+  --background-color: #ecf0f1;
+  --text-color: #2c3e50;
+  --success-color: #2ecc71;
+}
+
+/* * { */
+/*   box-sizing: border-box; */
+/*   margin: 0; */
+/*   padding: 0; */
+/* } */
+
+#thanks {
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  background-color: #09090b;
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.thanks {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: #f6d44c;
+  text-shadow: 0 2px 10px rgba(46, 204, 113, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add a subtle message under the heading */
+.thanks::after {
+  content: "Votre message a été bien envoyé !!!";
+  text-transform: None;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #ec6d51;
+  margin-top: 15px;
+}
+
+/* Add a back to home link */
+#thanks::after {
+  content: "";
+  display: block;
+  margin-top: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .thanks {
+    font-size: 2.5rem;
+  }
+
+  thanks::after {
+    font-size: 1rem;
+  }
+}

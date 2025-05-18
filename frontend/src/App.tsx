@@ -6,6 +6,7 @@ import Contact from "@/pages/Contact";
 import Layout from "@/pages/Layout";
 import NotFoundPage from "@/pages/NotFoundPage";
 import "./App.css";
+import Thanks from "./pages/Thanks";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="catalogue" element={<Catalogue />} />
         <Route path="a-propos" element={<APropos />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="merci" element={<Thanks />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
