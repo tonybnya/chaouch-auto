@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import check_password_hash, generate_password_hash
 
 # Create a SQLAlchemy instance to manage database operations
 db = SQLAlchemy()
@@ -9,7 +10,18 @@ class AdminUser(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
-    password = db.Column(db.String(120), nullable=False)
+    _password = db.Column("password", db.String(120), nullable=False)
+
+    @property
+    def password(self):
+        raise AttributeError("Password is write-only.")
+
+    @password.setter
+    def password(self, plaintext_password):
+        self._password = generate_password_hash(plaintext_password)
+
+    def check_password(self, password):
+        return check_password_hash(self._password, password)
 
 
 class Vehicle(db.Model):
